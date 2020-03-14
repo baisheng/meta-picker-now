@@ -18,12 +18,8 @@ export default async (request: NowRequest, response: NowResponse) => {
     require('metascraper-url')(),
     // require('metascraper-readability')()
   ])
-  // const { name = '' } = request.query
-  // response.status(200).send(`Hello ${name}!`)
   const { body } = request
-  // console.log(body)
   const targetUrl = getUrlFromPath(body.url);
-  // console.log(targetUrl)
   if (!isValidUrl(targetUrl)) {
     response.statusCode = 400;
     response.setHeader('Content-Type', 'text/json');
@@ -34,7 +30,7 @@ export default async (request: NowRequest, response: NowResponse) => {
     retry: 10
   })
 
-  const $ = cheerio.load(body);
+  // const $ = cheerio.load(body);
   // @ts-ignore
   // read({
   //   cheerio: $
@@ -42,8 +38,7 @@ export default async (request: NowRequest, response: NowResponse) => {
   //   console.log(art)
   // });
 
-  const {art} = await read({cheerio: $})
-  console.log(art)
+  // const {art} = await read({cheerio: $})
   // console.log(html)
   const metadata = await metascraper({ html, url })
   const json = {
