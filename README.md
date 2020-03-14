@@ -11,6 +11,7 @@
 `yarn install`
 `yarn dev`
 
+## 示例
 ```bash
 curl -X POST "https://metaserver-now.baisheng.now.sh/" \         
   -H "Content-Type: application/json" \
@@ -19,7 +20,8 @@ curl -X POST "https://metaserver-now.baisheng.now.sh/" \
 }'
 
 ```
-### response
+
+**响应结果**
 
 ```json
 {
