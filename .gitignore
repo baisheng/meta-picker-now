@@ -1,0 +1,20 @@
+# dependencies
+/node_modules/
+
+# logs
+*.log
+
+# Nuxt build
+/.now/
+
+# Nuxt generate
+/dist/
+
+.idea/.gitignore
+.idea/codeStyles/
+.idea/dbnavigator.xml
+.idea/metaserver-now.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.now/

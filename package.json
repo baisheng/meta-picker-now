@@ -1,0 +1,59 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "nodemon --exec ts-node --files src/test/index.ts",
+    "start": "ts-node src/index.ts",
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "metaserver-now",
+  "author": "baisheng",
+  "module": "dist/metaserver-now.esm.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "got": "^10.6.0",
+    "metascraper": "^5.11.6",
+    "metascraper-author": "^5.11.6",
+    "metascraper-clearbit": "^5.11.6",
+    "metascraper-date": "^5.11.6",
+    "metascraper-description": "^5.11.6",
+    "metascraper-image": "^5.11.6",
+    "metascraper-logo": "^5.11.6",
+    "metascraper-publisher": "^5.11.6",
+    "metascraper-readability": "^5.11.6",
+    "metascraper-title": "^5.11.6",
+    "metascraper-url": "^5.11.6",
+    "read-art": "^0.5.6",
+    "ts-node": "^8.6.2"
+  },
+  "devDependencies": {
+    "@now/node": "^1.4.1",
+    "@types/cheerio": "^0.22.16",
+    "@types/jest": "^25.1.4",
+    "husky": "^4.2.3",
+    "nodemon": "^2.0.2",
+    "test-listen": "^1.1.0",
+    "tsdx": "^0.12.3",
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3",
+    "zeit-now-node-server": "^1.0.1"
+  }
+}
