@@ -1,27 +1,36 @@
-# TSDX Bootstrap
+# 网站 meta 信息获取服务
 
-This project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).
+这个项目主要目标是获取网站的 meta 信息，后期会增加获取页面内容的功能
 
-## Local Development
+## 部署
+本项目当前主要部署在 zeit 服务上
 
-Below is a list of commands you will probably find useful.
+[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/baisheng/meta-picker-now.git)
 
-### `npm start` or `yarn start`
+## 开发
+`yarn install`
+`yarn dev`
 
-Runs the project in development/watch mode. Your project will be rebuilt upon changes. TSDX has a special logger for you convenience. Error messages are pretty printed and formatted for compatibility VS Code's Problems tab.
+```bash
+curl -X POST "https://metaserver-now.baisheng.now.sh/" \         
+  -H "Content-Type: application/json" \
+  -d '{
+  "url": "https://medium.com/"
+}'
 
-<img src="https://user-images.githubusercontent.com/4060187/52168303-574d3a00-26f6-11e9-9f3b-71dbec9ebfcb.gif" width="600" />
+```
+### response
 
-Your library will be rebuilt if you make edits.
+```json
+{
+  "author": null,
+  "date": null,
+  "description": "Medium is not like any other platform on the internet. Our sole purpose is to help you find compelling ideas, knowledge, and perspectives. We don’t serve ads—we serve you, the curious reader who loves to learn new things. Medium is home to thousands of independent voices, and we combine humans and t…",
+  "image": "https://cdn-images-1.medium.com/max/1200/1*29XAq2WrtejUCxRzSgDLXA.png",
+  "logo": "https://logo.clearbit.com/medium.com",
+  "publisher": "Medium",
+  "title": "Medium – Get smarter about what matters to you.",
+  "url": "https://medium.com"
+} 
 
-### `npm run build` or `yarn build`
-
-Bundles the package to the `dist` folder.
-The package is optimized and bundled with Rollup into multiple formats (CommonJS, UMD, and ES Module).
-
-<img src="https://user-images.githubusercontent.com/4060187/52168322-a98e5b00-26f6-11e9-8cf6-222d716b75ef.gif" width="600" />
-
-### `npm test` or `yarn test`
-
-Runs the test watcher (Jest) in an interactive mode.
-By default, runs tests related to files changed since the last commit.
+```
