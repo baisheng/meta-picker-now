@@ -1,8 +1,7 @@
-// api/hello?name=reader
 import { NowRequest, NowResponse } from '@now/node'
 import got from 'got'
 import {getUrlFromPath, isValidUrl} from "./validator";
-import cheerio from 'cheerio'
+// import cheerio from 'cheerio'
 // @ts-ignore
 import read from 'read-art'
 export default async (request: NowRequest, response: NowResponse) => {
